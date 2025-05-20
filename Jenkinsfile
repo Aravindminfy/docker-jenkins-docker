@@ -4,14 +4,14 @@ pipeline {
     environment {
         IMAGE_NAME = "aravind399/python-demo-app"
         DOCKER_USERNAME = "aravind399"
-        DOCKER_PASSWORD = "Ai@304491" // ⚠️ Replace with **** if sharing publicly
+        DOCKER_PASSWORD = "Ai@304491" // ⚠️ Never share credentials in plain text
     }
 
     stages {
         stage('Clone Repo') {
             steps {
                 echo 'Cloning the repository...'
-                // You can add `git 'https://github.com/user/repo.git'` here
+                // You can use: git 'https://github.com/user/repo.git'
             }
         }
 
@@ -33,6 +33,13 @@ pipeline {
             steps {
                 echo 'Pushing image to Docker Hub...'
                 sh "docker push $IMAGE_NAME"
+            }
+        }
+
+        stage('Pull Docker Image from Hub') {
+            steps {
+                echo 'Pulling image from Docker Hub (fresh)...'
+                sh "docker pull $IMAGE_NAME"
             }
         }
 
