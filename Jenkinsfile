@@ -4,14 +4,14 @@ pipeline {
     environment {
         IMAGE_NAME = "aravind399/python-demo-app"
         DOCKER_USERNAME = "aravind399"
-        DOCKER_PASSWORD = "Ai@304491" // ⚠️ Never share credentials in plain text
+        DOCKER_PASSWORD = "Ai@304491" 
     }
 
     stages {
         stage('Clone Repo') {
             steps {
                 echo 'Cloning the repository...'
-                // You can use: git 'https://github.com/user/repo.git'
+            
             }
         }
 
