@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = "aravind399/python-demo-app"
         DOCKER_USERNAME = "aravind399"
-        DOCKER_PASSWORD = "Ai@304491" 
+        DOCKER_PASSWORD = "************" 
     }
 
     stages {
